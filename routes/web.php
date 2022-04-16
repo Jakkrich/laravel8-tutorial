@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
@@ -50,3 +51,5 @@ Route::get('/session/get', [SessionController::class, 'getSessionData'])->name('
 Route::get('/session/set', [SessionController::class, 'storeSessionData'])->name('session.store');
 
 Route::get('/session/remove', [SessionController::class, 'removeSessionData'])->name('session.remove');
+
+Route::get('/posts', [PostController::class, 'getAllPost'])->name('post.getallpost');
