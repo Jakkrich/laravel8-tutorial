@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,9 @@ Route::get('/update-post', [ClientController::class, 'getUpdatePost'])->name('po
 Route::get('/delete-post/{id?}', [ClientController::class, 'getDeletePost'])->name('posts.getdeletepost');
 
 Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.index');
+
+Route::get('/user/form', [UserController::class, 'form'])->name('user.form');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+
+Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');
