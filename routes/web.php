@@ -53,3 +53,15 @@ Route::get('/session/set', [SessionController::class, 'storeSessionData'])->name
 Route::get('/session/remove', [SessionController::class, 'removeSessionData'])->name('session.remove');
 
 Route::get('/posts', [PostController::class, 'getAllPost'])->name('post.getallpost');
+
+Route::get('/post-add', [PostController::class, 'addPost'])->name('post.add');
+
+Route::post('/post-submit', [PostController::class, 'addPostSubmit'])->name('post.addsubmit');
+
+Route::get('/post/{id}', [PostController::class, 'getPostById'])->name('post.getbyid');
+
+Route::get('/post-delete/{id}', [PostController::class, 'deletePost'])->name('post.delete');
+
+Route::get('/post-edit/{id}', [PostController::class, 'editPost'])->name('post.edit');
+
+Route::post('/post-editsubmit', [PostController::class, 'editPostSubmit'])->name('post.editsubmit');
